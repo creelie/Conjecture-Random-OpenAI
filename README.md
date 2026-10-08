@@ -23,3 +23,27 @@ computations of creelie/Lehmer-1-2); the paper cites them.
 repositories (D4 sphere packing, Hodge, Navier–Stokes, Lehmer): what each
 leaves open and why none of those residuals closes by an analytical
 argument.
+
+## The Hodge conjecture for abelian varieties of Weil type
+
+Author: Deep Bhattacharjee
+
+**Status: the Hodge conjecture is not proved here.**
+
+`paper/hodge/weil_closure_attempt.tex` is a closure attempt for the Weil
+class on a general abelian variety of Weil type. It proves what the attempt
+gives and states exactly where it stops:
+
+- the algebraic locus is dense, and it is either everything or meagre;
+- strata through a member with full Hodge group have full monodromy;
+- one semiregular cycle would close the locus;
+- the locus is everything if and only if the Weil class has representatives
+  of bounded degree on a Zariski-dense set;
+- at a member with full Hodge group, nothing built from divisors and
+  homomorphisms reaches the Weil class, and neither do the tautological
+  cycles of curves with an automorphism of order three.
+
+`book/` is the draft of a monograph, *Weil Classes and the Hodge
+Conjecture*. Chapters 1–3 are written, and Chapters 4–7 and the bibliography
+are still to come. `book/proposal.md` is a draft Springer proposal, with
+notes on how to submit it.
