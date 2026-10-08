@@ -43,9 +43,14 @@ produce the class, including semiregularity with exact Weil character,
 line-bundle sums, hyperplane induction, Kuga–Satake from a weight-two
 piece and secant objects.
 
-Why it does not close: closing it needs a cycle at a member with the
-*full* Hodge group, and no construction is known. This is the core of the
-Hodge conjecture for abelian varieties, not a small residual.
+Why it does not close: closing it needs a cycle at a *general* member.
+At members with full Hodge group one construction is known, Schoen's cycles
+on Prym varieties for Q(√−3) with split form, but they fill only a locus of
+dimension 3n inside a family of dimension n², so for n ≥ 4 they do not
+reach a general member. (An earlier version of this note said no
+construction was known at members with full Hodge group; that was wrong.)
+This is the core of the Hodge conjecture for abelian varieties, not a small
+residual.
 
 ## Navier–Stokes (creelie/NavierStokesAndEuler)
 
@@ -103,6 +108,6 @@ repository:
 | problem | smallest residual | closable analytically here? |
 | --- | --- | --- |
 | D4 sphere packing | localisation of 24 centres near √2·D4 | no; needs triple-level information |
-| Hodge (abelian varieties) | algebraicity of ω₁ at a full-Hodge-group member | no; this is the conjecture itself |
+| Hodge (abelian varieties) | algebraicity of ω₁ at a general member | no; this is the conjecture itself |
 | Navier–Stokes | none in the statement; the Lean statement matches Clay (C), (D) | nothing to close; proof not rebuilt here |
 | Lehmer | k ≥ 16 and beyond, pseudo-solution questions | partial only: k ≥ 11 by hand |
