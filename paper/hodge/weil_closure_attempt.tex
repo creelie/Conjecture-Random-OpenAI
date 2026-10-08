@@ -1,0 +1,353 @@
+\documentclass[11pt]{amsart}
+\usepackage{amssymb,amsmath,amsthm,mathtools}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{setup}[theorem]{Setup}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\Hg}{\operatorname{Hg}}
+\newcommand{\SU}{\operatorname{SU}}
+\newcommand{\Sh}{\mathrm{Sh}}
+\newcommand{\Hilb}{\operatorname{Hilb}}
+\newcommand{\cl}{\operatorname{cl}}
+
+\title[Closing the algebraic locus of Weil classes]{Closing the algebraic locus of Weil classes:\\
+an attempt and the exact point where it stops}
+\author{Deep Bhattacharjee}
+\date{October 2026}
+
+\begin{document}
+
+\begin{abstract}
+On a general abelian variety of Weil type the Hodge conjecture comes down
+to one question: is the Weil class algebraic? The set of members of a Weil
+family on which it is algebraic is known to be dense, and to be either the
+whole family or a meagre set. This note tries to show that it is the whole
+family, by the most direct route: take a member where the class is
+algebraic and move the cycle to every other member. We prove what that
+route gives. A stratum of the algebraic locus that passes through a member
+with the largest possible Hodge group has the largest possible monodromy.
+A single semiregular cycle at any one member would close the locus. We then
+show where the route stops. The only members at which the class is known to
+be algebraic have small Hodge group, and no semiregular cycle with the
+right class is known. The attempt does \emph{not} prove the Hodge
+conjecture for these varieties, and we say precisely what is missing.
+\end{abstract}
+
+\maketitle
+
+\section{What we are trying to prove}
+
+Fix an imaginary quadratic field $K$ and an integer $n\ge2$. An abelian
+variety $A$ of dimension $2n$ is \emph{of Weil type} for $K$ if $K$ acts on
+it by endomorphisms (up to isogeny), the Rosati involution of a
+polarisation $\eta$ acts on $K$ as complex conjugation, and the two
+eigenspaces of $K$ on the tangent space of $A$ both have dimension $n$.
+Then $V=H^{1}(A,\QQ)$ is a $K$-vector space of dimension $2n$, the
+polarisation gives a $K$-hermitian form $H$ on it of signature $(n,n)$, and
+the $K$-determinant
+\[
+  \textstyle\bigwedge^{2n}_{K}V\subset\bigwedge^{2n}_{\QQ}V=H^{2n}(A,\QQ)
+\]
+is a plane of Hodge classes, the \emph{Weil classes} \cite{Weil77}. Weil
+showed that on a general such $A$ they are not products of divisor
+classes. In fact more is true: if the Hodge group of $A$ is the whole
+special unitary group $\SU(V,H)$, which happens for a very general member
+of the family, then the Hodge ring of $A$ is spanned by the powers of
+$\eta$ together with this plane, and the Hodge conjecture for $A$ in every
+degree is equivalent to the algebraicity of a single Weil class $\omega$
+\cite{MZ99,BhH8}.
+
+These varieties sit in one family. Let $D$ be the bounded symmetric domain
+of $\SU(n,n)$, of dimension $n^{2}$, and let $\Gamma$ be a torsion-free
+arithmetic subgroup of $\SU(V,H)(\QQ)$. Then $\Sh=\Gamma\backslash D$ is a
+smooth quasi-projective variety (Baily and Borel \cite{BB66}), and over it
+there is a projective abelian scheme $\pi\colon\mathcal A\to\Sh$ whose
+fibres are the abelian varieties of Weil type with the given discriminant.
+Since $\Gamma$ lies in the special unitary group, it acts trivially on the
+$K$-determinant. So the Weil classes form a \emph{constant} local system
+of rank two inside $R^{2n}\pi_{*}\QQ$, and $\omega$ is a global section of
+it.
+
+\begin{definition}
+The \emph{algebraic locus} is the set $\Sigma\subseteq\Sh$ of points $t$
+at which $\omega(t)$ is the class of an algebraic cycle with rational
+coefficients on $A_{t}$.
+\end{definition}
+
+The goal is $\Sigma=\Sh$. That statement, for every $K$, $n$ and
+discriminant, is the Hodge conjecture for every abelian variety of Weil
+type. For $n=2$ it is a theorem of Markman \cite{Mar25a,Mar25b}. For
+$n=3$ and a split hermitian form it is also Markman's theorem. For $n\ge3$
+in general it is open.
+
+\section{What is already known about the locus}
+
+The first three facts are proved in \cite{BhH8}. We include proofs of the
+first two, because they are short and the rest of the note uses the
+argument.
+
+\begin{lemma}\label{lem:countable}
+$\Sigma$ is a countable union of closed algebraic subsets of $\Sh$.
+\end{lemma}
+
+\begin{proof}
+Fix a relatively ample line bundle on $\mathcal A/\Sh$. For each Hilbert
+polynomial $P$ the relative Hilbert scheme $\Hilb_{P}(\mathcal A/\Sh)$ is
+projective over $\Sh$ and has finitely many irreducible components. Take
+finitely many components $H_{1},\dots,H_{r}$, possibly from different
+Hilbert schemes, and rational numbers $q_{1},\dots,q_{r}$. Over the fibre
+product $H=H_{1}\times_{\Sh}\dots\times_{\Sh}H_{r}$ we have the cohomology
+class $\sum_{i}q_{i}[Z_{i}]$ in the fibre $H^{2n}(A_{t},\QQ)$. Classes of
+the fibres of a flat family of subschemes are locally constant. So on each
+connected component of $H$ the class $\sum q_{i}[Z_{i}]$ either equals
+$\omega(t)$ everywhere or nowhere. The union of the components where it
+equals $\omega(t)$ maps properly to $\Sh$, so its image is closed and
+algebraic. There are countably many choices of $P$'s, components and
+$q_{i}$'s, and every point of $\Sigma$ lies in one of these images.
+\end{proof}
+
+\begin{lemma}[Dichotomy]\label{lem:dichotomy}
+Either $\Sigma=\Sh$, or $\Sigma$ is meagre: it lies in a countable union
+of closed subsets with empty interior, and its complement is dense.
+\end{lemma}
+
+\begin{proof}
+$\Sh$ is irreducible. If one of the closed sets of
+Lemma~\ref{lem:countable} is all of $\Sh$, then $\Sigma=\Sh$. Otherwise
+each of them is a proper closed algebraic subset, which has empty
+interior, and Baire's theorem on the complex manifold $\Sh$ gives the rest.
+\end{proof}
+
+\begin{proposition}[\cite{BhH8}]\label{prop:dense}
+$\Sigma$ contains an explicit point $s_{0}$ at which $A_{s_{0}}$ is
+isogenous to a product of abelian varieties with complex multiplication,
+and at which $\omega$ is a polynomial in divisor classes. Its orbit under
+the Hecke correspondences lies in $\Sigma$ and is dense in $\Sh$.
+\end{proposition}
+
+So $\Sigma$ is dense, and the problem is entirely about which side of the
+dichotomy we are on. One stratum of Lemma~\ref{lem:countable} equal to all
+of $\Sh$ would settle it.
+
+There is a catch, and it is the reason the problem is hard. Write $\Sh^{\circ}$
+for the set of points where the Hodge group of $A_{t}$ is all of
+$\SU(V,H)$. Its complement is a countable union of proper special
+subvarieties, so $\Sh^{\circ}$ is the complement of a meagre set. Every
+point in the Hecke orbit of $s_{0}$ is a CM point, with a torus for its
+Hodge group, so it lies \emph{outside} $\Sh^{\circ}$. To close the locus
+we need at least one point of $\Sigma\cap\Sh^{\circ}$, and no such point
+is known for $n\ge3$ in general.
+
+\section{The first route: strata with big monodromy}
+
+Suppose that we had found one point $t\in\Sigma\cap\Sh^{\circ}$, and let
+$S$ be an irreducible stratum of Lemma~\ref{lem:countable} through it. The
+first thing to ask is what $S$ can look like. The following lemma says that
+$S$ cannot be a small, degenerate piece of the family.
+
+\begin{theorem}\label{thm:monodromy}
+Let $S\subseteq\Sh$ be an irreducible closed subvariety of positive
+dimension that contains a point of $\Sh^{\circ}$. Then the connected
+algebraic monodromy group of the local system $R^{1}\pi_{*}\QQ$ restricted
+to the smooth locus of $S$ is the whole group $\SU(V,H)$.
+\end{theorem}
+
+\begin{proof}
+Let $S^{\mathrm{reg}}$ be the smooth locus of $S$. It is connected, since
+$S$ is irreducible. The Hodge group of a very general point of $S$ contains
+the Hodge group of every point of $S$, so it contains $\SU(V,H)$. On the
+other hand every Hodge group in the family lies in $\SU(V,H)$ \cite{BhH8}.
+So the generic Hodge group on $S$ is $\SU(V,H)$.
+
+By Andr\'e's theorem \cite{And92}, the connected algebraic monodromy group
+$M$ of a polarisable variation of Hodge structure over a smooth connected
+base is a normal subgroup of the derived group of the generic
+Mumford--Tate group. Here that derived group is $\SU(V,H)$, which is an
+outer form of $\SL_{2n}$ over $\QQ$, and so it is almost simple. Its
+connected normal subgroups are $1$ and itself.
+
+If $M=1$, the monodromy is finite. After a finite \'etale cover of
+$S^{\mathrm{reg}}$ the local system becomes trivial, and the period map
+lifts to a holomorphic map from that cover to $D$. Now $D$ is a bounded
+domain, so the coordinate functions of the lift are bounded holomorphic
+functions. Pass to a resolution and a smooth compactification of the
+cover. By the Riemann extension theorem the bounded functions extend to the
+compactification, which is compact and connected, so they are constant.
+Then the period map is constant on $S^{\mathrm{reg}}$. But the period map of
+the universal family over $\Sh$ is the identity of $\Gamma\backslash D$, so
+$S$ is a point, which contradicts $\dim S>0$. Hence $M=\SU(V,H)$.
+\end{proof}
+
+So a positive-dimensional stratum through a general point carries all the
+monodromy the family has. It is natural to hope that a cycle family with
+this much monodromy can be moved off $S$. That hope is exactly the
+variational Hodge conjecture for this family, and here is why the
+monodromy does not help on its own. The class $\omega$ is invariant under
+all of $\SU(V,H)$, so the monodromy never moves $\omega$, and it gives no
+constraint that would force the stratum to grow. Big monodromy rules out
+degenerate strata. It does not produce new cycles.
+
+\section{The second route: deforming one cycle}
+
+The direct way to move a cycle is deformation theory. Let $Z\subset A_{t}$
+be a local complete intersection of codimension $n$. Bloch \cite{Blo72}
+defined the \emph{semiregularity map}
+\[
+  \sigma_{Z}\colon H^{1}(Z,N_{Z})\longrightarrow H^{n+1}(A_{t},\Omega^{n-1}),
+\]
+and proved the following. If $\sigma_{Z}$ is injective, then $Z$ deforms
+along every deformation of $A_{t}$ along which its class stays of Hodge type.
+Buchweitz and Flenner \cite{BF03} extended the definition and the theorem
+to perfect complexes, and Pridham \cite{Pri24} gave a general proof.
+
+\begin{theorem}\label{thm:semireg}
+Suppose that at some point $t\in\Sh$ there is a local complete intersection
+$Z\subset A_{t}$ of codimension $n$ whose class is
+$\cl(Z)=\alpha+c\,\eta^{n}$ with $\alpha$ a nonzero Weil class and
+$c\in\QQ$, and whose semiregularity map is injective. Then $\Sigma=\Sh$.
+\end{theorem}
+
+\begin{proof}
+Along the universal family over a small neighbourhood $U$ of $t$, the flat
+transport of $\cl(Z)$ is $\alpha+c\eta^{n}$, and both terms are Hodge
+classes at every point, because the Weil plane and $\eta$ are. So the class
+of $Z$ stays of Hodge type along every direction of $U$. By Bloch's theorem,
+$Z$ deforms to every order along every curve germ in $U$. Then the image of
+its Hilbert scheme component contains the formal neighbourhood of $t$. Since
+that image is a closed analytic subset of $U$, it contains a neighbourhood
+of $t$. So one stratum of Lemma~\ref{lem:countable} has nonempty interior,
+and it is all of $\Sh$ by irreducibility. At every point $s$ we then have an
+algebraic cycle of class $\alpha(s)+c\eta^{n}$, so $\alpha(s)$ is
+algebraic.
+
+It remains to pass from $\alpha$ to $\omega$. The field $K$ acts on the
+Weil plane: an element $\tau\in K^{\times}$ acts on $\bigwedge^{2n}_{K}V$ by
+multiplication by $\tau^{2n}$. A positive integer multiple $m\tau$ is a
+genuine endomorphism of $A_{s}$. Its pullback, divided by $m^{2n}$, is
+$\tau^{*}$ on $H^{2n}$, so $\tau^{*}$ carries algebraic classes to
+algebraic classes. Choose $\tau$ whose argument is not a rational multiple of $\pi$, for
+example $\tau=a+\sqrt{-d}$ with $a$ a positive integer chosen so that
+$\tau/\bar\tau$ is not a root of unity. Then $\tau^{2n}\notin\QQ$, and the classes
+$\alpha$ and $\tau^{*}\alpha$ span the Weil plane over $\QQ$, so $\omega(s)$
+is algebraic.
+\end{proof}
+
+The same holds with $Z$ replaced by a perfect complex $E$ on $A_{t}$, with
+the Chern character in place of the cycle class, by the theorem of
+Buchweitz--Flenner and Pridham. This is the route Markman followed for
+sixfolds of split Weil type, using secant sheaves and an equivariant form
+of semiregularity \cite{Mar25b}.
+
+\section{Where the attempt stops}\label{sec:stops}
+
+Both routes need an input that we do not have.
+
+\subsection*{The first route needs a point of $\Sigma$ with full Hodge group.}
+Outside the families where the conjecture is already known, such as
+Markman's split sixfolds, every point at which $\omega$ is known to be
+algebraic is a CM point or lies on a proper special subvariety. These points are excluded from $\Sh^{\circ}$ by definition.
+Theorem~\ref{thm:monodromy} tells us what a stratum through a point of
+$\Sh^{\circ}$ would look like, but it gives no way to find one.
+
+\subsection*{The second route needs a semiregular object, and the obvious
+ones are not.}
+For an object whose Chern character is \emph{exactly} a Weil class, with no
+other component, the semiregularity map is never injective, at any member
+of any Weil family (\cite{BhH8}, the theorem labelled \texttt{thm:p2false}
+in its source). The reason is
+Voisin's. Such an object would deform along every $K$-linear deformation of
+$A_{t}$, including the non-algebraic complex tori of Weil type. A very
+general such torus has no analytic subvarieties of intermediate dimension,
+and its coherent sheaves have no Chern classes in intermediate degree
+\cite{Voi02b}. So the deformation cannot exist, and the semiregularity map
+cannot be injective. With a polarisation term allowed, as in
+Theorem~\ref{thm:semireg}, the criterion survives, but it asks for an object
+with a precise and large amount of self-extension. For $n\ge3$ and a
+general CM field no such object is known. A list of the natural
+constructions that provably fail is in \cite{BhH8}.
+
+\subsection*{Neither gap is a technicality.}
+If $\Sigma=\Sh$, then $\Sigma$ meets $\Sh^{\circ}$, so the first gap is
+a consequence of the goal as well as a step towards it. And by
+\cite{BhH8} (the corollary labelled \texttt{cor:weilequiv}), closing the
+locus is equivalent to one case of the Lefschetz standard conjecture: the
+case of the total space of the family over a projective curve through
+$s_{0}$ and a very general point. These are the variational Hodge
+conjecture and the standard conjectures in disguise. They are not small residuals.
+
+\section{What this note establishes}
+
+Proved here, or proved in the cited work and used as theorems:
+\begin{enumerate}[label=(\arabic*)]
+\item The algebraic locus is a countable union of closed algebraic
+subsets, it is dense, and it is either everything or meagre.
+\item Any positive-dimensional stratum of it through a member with full
+Hodge group has full monodromy $\SU(V,H)$.
+\item A single semiregular cycle or complex, at any member, with class a
+nonzero Weil class plus a multiple of $\eta^{n}$, would close the locus,
+and with it the Hodge conjecture for every abelian variety of Weil type in
+that family.
+\end{enumerate}
+Not proved: that such a cycle or complex exists, or that $\Sigma$ contains
+a single member with full Hodge group, when $n\ge3$. So the Hodge
+conjecture for abelian varieties of Weil type of dimension at least six
+remains open, and with it the Hodge conjecture.
+
+\begin{thebibliography}{99}
+
+\bibitem{And92} Y.~Andr\'e, \emph{Mumford--Tate groups of mixed Hodge
+structures and the theorem of the fixed part}, Compositio Math.\
+\textbf{82} (1992), 1--24.
+
+\bibitem{BB66} W.~L.~Baily, Jr.\ and A.~Borel, \emph{Compactification of
+arithmetic quotients of bounded symmetric domains}, Ann.\ of Math.\ (2)
+\textbf{84} (1966), 442--528.
+
+\bibitem{BhH8} D.~Bhattacharjee, \emph{Algebraic Loci of Weil Classes on
+Abelian Varieties}, LaTeX source, verification code and Lean certificate,
+release v5.1.0, \url{https://github.com/creelie/H8}; archived at
+Zenodo, \url{https://doi.org/10.5281/zenodo.22950275}.
+
+\bibitem{Blo72} S.~Bloch, \emph{Semi-regularity and de Rham cohomology},
+Invent.\ Math.\ \textbf{17} (1972), 51--66.
+
+\bibitem{BF03} R.-O.~Buchweitz and H.~Flenner, \emph{A semiregularity map
+for modules and applications to deformations}, Compositio Math.\
+\textbf{137} (2003), 135--210.
+
+\bibitem{Mar25a} E.~Markman, \emph{Cycles on abelian $2n$-folds of Weil
+type from secant sheaves on abelian $n$-folds}, preprint,
+arXiv:2502.03415 (2025).
+
+\bibitem{Mar25b} E.~Markman, \emph{Secant sheaves and Weil classes on
+abelian varieties}, preprint, arXiv:2509.23403 (2025).
+
+\bibitem{MZ99} B.~Moonen and Yu.~G.~Zarhin, \emph{Hodge classes on abelian
+varieties of low dimension}, Math.\ Ann.\ \textbf{315} (1999), 711--733.
+
+\bibitem{Pri24} J.~P.~Pridham, \emph{Semiregularity as a consequence of
+Goodwillie's theorem}, Forum Math.\ Sigma \textbf{12} (2024), e126.
+
+\bibitem{Voi02b} C.~Voisin, \emph{A counterexample to the Hodge conjecture
+extended to K\"ahler varieties}, Int.\ Math.\ Res.\ Not.\ \textbf{2002},
+no.~20, 1057--1075.
+
+\bibitem{Weil77} A.~Weil, \emph{Abelian varieties and the Hodge ring},
+in: \OE uvres Scientifiques, Vol.~III, Springer, New York, 1979,
+421--429.
+
+\end{thebibliography}
+
+\end{document}
