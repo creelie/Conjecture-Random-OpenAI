@@ -1,0 +1,443 @@
+\documentclass[11pt]{amsart}
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\N}{\mathbb{N}}
+
+\title[Lehmer's totient problem: analytic constraints]{Lehmer's totient problem:\\
+analytic constraints on a composite solution\\
+\normalsize(the problem itself remains open)}
+\author{Deep Bhattacharjee}
+\date{October 2026}
+
+\begin{document}
+
+\begin{abstract}
+Lehmer asked in 1932 whether a composite integer $n$ can satisfy
+$\varphi(n)\mid n-1$. This paper does \emph{not} answer that question.
+It gives complete, purely analytical proofs, with no computer-assisted
+step, of a set of constraints that any composite solution must satisfy.
+Let $k$ be the number of prime factors of such an $n$ and
+$a=(n-1)/\varphi(n)$. We prove that $n$ is odd, squarefree and
+$n\equiv1\pmod{2^{k}}$; that $k\ge10$ when $3\nmid n$; that, when
+$3\nmid n$, either some prime factor of $n$ is $\equiv1\pmod 3$ or
+$k\ge 223$; that $a\equiv1\pmod 3$ and $k\ge111$ when $3\mid n$; and
+that $n<(2k)^{2^{k}}/k$, so that each $k$ admits only finitely many
+solutions. Every inequality is reduced to a comparison of explicit
+rationals that can be checked by hand. We also show that the product
+method behind the lower bounds cannot by itself exclude $k=11$, and we
+state precisely where the analytic argument stops. Most of these
+statements are weaker than results already in the literature, which we
+cite; the contribution is a self-contained analytic account, not a
+resolution of the conjecture.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+Every prime $p$ satisfies $\varphi(p)=p-1$. Lehmer \cite{Leh32} asked
+whether any composite $n$ satisfies
+\begin{equation}\label{eq:L}
+\varphi(n)\mid n-1 ,
+\end{equation}
+and conjectured that none does. We call a composite solution of
+\eqref{eq:L} a \emph{Lehmer number}. Throughout, $n$ denotes a Lehmer
+number,
+\[
+n=p_1p_2\cdots p_k,\qquad p_1<p_2<\cdots<p_k ,
+\qquad a=\frac{n-1}{\varphi(n)}\in\N ,
+\]
+where the factorisation into \emph{distinct} primes is justified by
+Lemma~\ref{lem:basic}.
+
+\subsection*{Status of the problem} Lehmer's conjecture is open. Lehmer
+showed that a Lehmer number is odd, squarefree and has at least seven
+prime factors \cite{Leh32}; Cohen and Hagis raised this to fourteen
+\cite{CH80}; Pomerance proved $n<k^{2^{k}}$ \cite{Pom77}, later sharpened
+by Burek and \.{Z}mija \cite{BZ19}; and Hagis showed that a Lehmer number
+divisible by $3$ has a very large number of prime factors \cite{Hag88}.
+The computational work of Mandal, Bhattacharjee and Bhattacharya
+\cite{MBB} reports $k\ge16$. None of these, and nothing in this paper,
+excludes Lehmer numbers altogether.
+
+\subsection*{What this paper proves} All proofs below are analytic:
+every step is either an algebraic identity, an elementary inequality, or
+a comparison between two explicit rational numbers that the reader can
+verify with pencil and paper. Our results are:
+
+\begin{theorem}\label{thm:main}
+Let $n$ be a Lehmer number with $k$ prime factors and
+$a=(n-1)/\varphi(n)$.
+\begin{enumerate}
+\item[(i)] $n$ is odd and squarefree, $\gcd(n,\varphi(n))=1$, $a\ge2$,
+and $n\equiv1\pmod{2^{k}}$.
+\item[(ii)] If $3\nmid n$, then $k\ge10$.
+\item[(iii)] If $3\nmid n$ and no prime factor of $n$ is $\equiv1\pmod
+3$, then $a\ge3$ and $k\ge223$. Consequently, if $3\nmid n$ and $k\le222$,
+then $n\equiv1\pmod 3$.
+\item[(iv)] If $3\mid n$, then $a\equiv1\pmod 3$, $a\ge4$, and $k\ge111$.
+\item[(v)] $p_i\le (k-i+1)\,(p_1\cdots p_{i-1}+1)$ for $1\le i\le k$; in
+particular $p_1\le 2k$, and
+\[
+n<\frac{(2k)^{2^{k}}}{k}.
+\]
+Hence for each $k$ there are at most finitely many Lehmer numbers with
+$k$ prime factors.
+\end{enumerate}
+\end{theorem}
+
+Parts (i)--(iv) are weaker than known bounds; part (v) is a slightly
+weaker form of Pomerance's bound with a short self-contained proof. We
+include them because together they form a complete analytic treatment
+whose every step can be audited without a computer.
+
+\subsection*{What this paper does not prove}
+It does not prove Lehmer's conjecture. Section~\ref{sec:gap} explains
+the obstruction: the lower bounds above grow at most linearly in the
+information used, the upper bound in (v) is doubly exponential in $k$,
+and no argument here forces the two to meet. In particular
+Proposition~\ref{prop:limit} shows that the product inequality
+\eqref{eq:prod}, which drives (ii), is satisfied by an admissible set of
+eleven primes, so that method alone cannot reach $k\ge12$.
+
+\section{Basic structure}
+
+\begin{lemma}\label{lem:basic}
+Let $n>1$ be composite with $\varphi(n)\mid n-1$. Then
+\begin{enumerate}
+\item[(a)] $n$ is odd and squarefree;
+\item[(b)] $\gcd(n,\varphi(n))=1$; equivalently, $p\nmid q-1$ for all
+primes $p,q$ dividing $n$;
+\item[(c)] $a=(n-1)/\varphi(n)\ge2$;
+\item[(d)] $2^{k}\mid\varphi(n)$ and $n\equiv1\pmod{2^{k}}$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Since $\varphi(n)\mid n-1$ and $\gcd(n,n-1)=1$, every common divisor of
+$n$ and $\varphi(n)$ divides $n-1$ and $n$, hence equals $1$. This is
+(b) once (a) is known, and it already gives squarefreeness: if $p^2\mid
+n$ then $p\mid\varphi(n)$, a contradiction. If $n$ were even, then,
+being composite and squarefree, $n$ has an odd prime factor $q$, so
+$2\mid q-1\mid\varphi(n)$ and $2\mid\gcd(n,\varphi(n))$, a contradiction.
+Thus (a). For squarefree $n=p_1\cdots p_k$ we have
+$\varphi(n)=\prod(p_i-1)$, so $p_j\mid\varphi(n)$ if and only if $p_j\mid
+p_i-1$ for some $i$, giving the second form of (b).
+
+For (c): $a\ge1$, and $a=1$ means $\varphi(n)=n-1$, which forces every
+integer in $[1,n-1]$ to be prime to $n$, so $n$ is prime. Hence $a\ge2$.
+
+For (d): each $p_i$ is odd, so $2\mid p_i-1$ and $2^{k}\mid\prod(p_i-1)=
+\varphi(n)\mid n-1$.
+\end{proof}
+
+The engine of the lower bounds is the following inequality. Since
+$n/\varphi(n)=(n-1)/\varphi(n)+1/\varphi(n)$,
+\begin{equation}\label{eq:prod}
+\prod_{i=1}^{k}\frac{p_i}{p_i-1}=\frac{n}{\varphi(n)}>a\ge2 .
+\end{equation}
+
+\begin{definition}
+A finite set $S$ of odd primes is \emph{admissible} if $p\nmid q-1$ for
+all $p,q\in S$. Write $\Pi(S)=\prod_{p\in S}p/(p-1)$.
+\end{definition}
+
+By Lemma~\ref{lem:basic}(b), the prime factors of a Lehmer number form
+an admissible set $S$ with $\Pi(S)>a\ge2$.
+
+\begin{lemma}[Monotonicity]\label{lem:mono}
+Let $L=\{\ell_1<\ell_2<\cdots\}$ be a set of primes and let $T\subseteq
+L$ with $|T|=m$. Then $\Pi(T)\le\prod_{j=1}^{m}\ell_j/(\ell_j-1)$, and for
+$m'\le m$ the latter product over the first $m'$ elements is at most the
+product over the first $m$.
+\end{lemma}
+
+\begin{proof}
+The function $x\mapsto x/(x-1)$ is decreasing on $(1,\infty)$ and every
+value exceeds $1$. If $T=\{t_1<\cdots<t_m\}$ then $t_j\ge\ell_j$, so
+$t_j/(t_j-1)\le\ell_j/(\ell_j-1)$ for each $j$; multiply. The second
+claim holds because each omitted factor exceeds $1$.
+\end{proof}
+
+\section{Lehmer numbers prime to $3$}
+
+\begin{proposition}\label{prop:k10}
+If $n$ is a Lehmer number and $3\nmid n$, then $k\ge10$.
+\end{proposition}
+
+\begin{proof}
+Suppose $k\le9$. All prime factors of $n$ are at least $5$. We split
+into three cases, and in each one bound $\Pi(S)$ by
+Lemma~\ref{lem:mono}, applied with a list $L$ that contains every
+possible remaining prime factor. In each case the bound is below $2$,
+contradicting \eqref{eq:prod}.
+
+\emph{Case A: $5\nmid n$.} All prime factors lie in $L_A=\{7,11,13,
+\dots\}$, the primes $\ge7$. By Lemma~\ref{lem:mono},
+\[
+\Pi(S)\le\frac{7}{6}\cdot\frac{11}{10}\cdot\frac{13}{12}\cdot
+\frac{17}{16}\cdot\frac{19}{18}\cdot\frac{23}{22}\cdot\frac{29}{28}\cdot
+\frac{31}{30}\cdot\frac{37}{36}=\frac{3212440751}{1791590400}<1.7931 .
+\]
+
+\emph{Case B: $5\mid n$, $7\nmid n$.} By admissibility no other prime
+factor is $\equiv1\pmod5$, which removes $11,31,41$. The other at most
+eight prime factors lie in $\{13,17,19,23,29,37,43,47,\dots\}$, so
+\[
+\Pi(S)\le\frac54\cdot\frac{13}{12}\cdot\frac{17}{16}\cdot\frac{19}{18}
+\cdot\frac{23}{22}\cdot\frac{29}{28}\cdot\frac{37}{36}\cdot\frac{43}{42}
+\cdot\frac{47}{46}=\frac{45528350335}{25751126016}<1.7681 .
+\]
+
+\emph{Case C: $5\mid n$ and $7\mid n$.} Now the other prime factors
+avoid both $1\pmod5$ (removing $11,31,41$) and $1\pmod 7$ (removing
+$29,43$). The other at most seven prime factors lie in
+$\{13,17,19,23,37,47,53,\dots\}$, so
+\[
+\Pi(S)\le\frac54\cdot\frac76\cdot\frac{13}{12}\cdot\frac{17}{16}\cdot
+\frac{19}{18}\cdot\frac{23}{22}\cdot\frac{37}{36}\cdot\frac{47}{46}\cdot
+\frac{53}{52}=\frac{1041947935}{525533184}<1.9827 .
+\]
+In each case $\Pi(S)<2$, which contradicts \eqref{eq:prod}. Hence
+$k\ge10$.
+\end{proof}
+
+\begin{remark}
+Each fraction above is a product of nine explicit rationals; the reader
+can verify the stated bound by multiplying numerators and denominators
+(or by multiplying the decimal factors, rounded up, in turn). The
+numerators and denominators displayed are in lowest terms.
+\end{remark}
+
+\begin{lemma}[A comparison bound]\label{lem:sum}
+For $N\ge1$,
+\[
+\prod_{j=1}^{N}\frac{6j-1}{6j-2}\;\le\;\frac54\left(\frac{6N+1}{7}
+\right)^{1/6}.
+\]
+\end{lemma}
+
+\begin{proof}
+For $N=1$ both sides equal $5/4$. For $j\ge2$, $\log\frac{6j-1}{6j-2}=
+\log\bigl(1+\frac1{6j-2}\bigr)\le\frac{1}{6j-2}=f(j)$ with
+$f(x)=1/(6x-2)$. Since $f$ is convex on $x>1/3$, the Hermite--Hadamard
+inequality gives $f(j)\le\int_{j-1/2}^{j+1/2}f(x)\,dx$. Summing over
+$2\le j\le N$,
+\[
+\sum_{j=2}^{N}\log\frac{6j-1}{6j-2}\le\int_{3/2}^{N+1/2}\frac{dx}{6x-2}
+=\frac16\log\frac{6N+1}{7}.
+\]
+Add $\log(5/4)$ for $j=1$ and exponentiate.
+\end{proof}
+
+\begin{lemma}\label{lem:twomod3}
+Let $Q$ be a set of $N$ primes, each $\equiv2\pmod3$. Then
+$\Pi(Q)\le\prod_{j=1}^{N}\frac{6j-1}{6j-2}$.
+\end{lemma}
+
+\begin{proof}
+An odd prime $\equiv2\pmod 3$ is $\equiv5\pmod6$. The $j$-th smallest
+element of $Q$ is therefore at least the $j$-th positive integer
+$\equiv5\pmod 6$, namely $6j-1$. Apply the argument of
+Lemma~\ref{lem:mono}.
+\end{proof}
+
+\begin{proposition}\label{prop:223}
+Let $n$ be a Lehmer number with $3\nmid n$. If some prime factor of $n$
+is $\equiv1\pmod3$, then $n\equiv1\pmod3$. If no prime factor of $n$ is
+$\equiv1\pmod 3$, then $a\ge3$ and $k\ge223$.
+\end{proposition}
+
+\begin{proof}
+If $p\mid n$ with $p\equiv1\pmod3$, then $3\mid p-1\mid\varphi(n)\mid
+n-1$.
+
+Otherwise every $p_i\equiv2\pmod 3$, so $p_i-1\equiv1\pmod3$, whence
+$\varphi(n)\equiv1$ and $n\equiv(-1)^{k}\pmod 3$. From $n-1=a\varphi(n)$
+we get $a\equiv(-1)^{k}-1\in\{0,1\}\pmod3$, so $a\ne2$ and, by
+Lemma~\ref{lem:basic}(c), $a\ge3$. By \eqref{eq:prod},
+Lemma~\ref{lem:twomod3} and Lemma~\ref{lem:sum},
+\[
+3<\Pi(S)\le\frac54\left(\frac{6k+1}{7}\right)^{1/6},
+\qquad\text{so}\qquad
+\frac{6k+1}{7}>\left(\frac{12}{5}\right)^{6}=\frac{2985984}{15625}.
+\]
+For $k\le222$ the left side is at most $1333/7<190.43$, while the right
+side exceeds $191.10$. Hence $k\ge223$.
+\end{proof}
+
+Propositions~\ref{prop:k10} and~\ref{prop:223} give parts (ii) and (iii)
+of Theorem~\ref{thm:main}.
+
+\section{Lehmer numbers divisible by $3$}
+
+\begin{proposition}\label{prop:three}
+If $n$ is a Lehmer number and $3\mid n$, then $a\equiv1\pmod3$, $a\ge4$,
+and $k\ge111$.
+\end{proposition}
+
+\begin{proof}
+By Lemma~\ref{lem:basic}(b), no other prime factor $q$ of $n$ is
+$\equiv1\pmod3$, so each such $q$ satisfies $q\equiv2\pmod3$ and
+$q-1\equiv1\pmod 3$. Hence $\varphi(n)=2\prod_{q\ne3}(q-1)\equiv2\pmod
+3$, while $n-1\equiv-1\equiv2\pmod 3$. From $n-1=a\varphi(n)$ we get
+$2a\equiv2$, so $a\equiv1\pmod3$; with $a\ge2$ this forces $a\ge4$.
+
+Let $Q$ be the set of the $k-1$ prime factors other than $3$. By
+\eqref{eq:prod}, $\frac32\Pi(Q)>4$, i.e.\ $\Pi(Q)>8/3$. By
+Lemmas~\ref{lem:twomod3} and~\ref{lem:sum} with $N=k-1$,
+\[
+\frac83<\frac54\left(\frac{6N+1}{7}\right)^{1/6},
+\qquad\text{so}\qquad
+\frac{6N+1}{7}>\left(\frac{32}{15}\right)^{6}=\frac{1073741824}
+{11390625}>94.26 .
+\]
+For $N\le109$ the left side is at most $655/7<93.58$. Hence $N\ge110$
+and $k\ge111$.
+\end{proof}
+
+\section{An explicit upper bound}
+
+\begin{lemma}\label{lem:prefix}
+Let $n=p_1\cdots p_k$ be a Lehmer number and $1\le i\le k$. Put
+$m=p_1\cdots p_{i-1}$ (so $m=1$ when $i=1$) and $r=n/m=p_i\cdots p_k$.
+Then $m/\varphi(m)<a$, and consequently
+\[
+\frac{r}{\varphi(r)}>1+\frac1m .
+\]
+\end{lemma}
+
+\begin{proof}
+Suppose $m/\varphi(m)\ge a$. Since $r>1$ and $r$ is divisible by $p_i$,
+$r/\varphi(r)\ge p_i/(p_i-1)=1+1/(p_i-1)\ge 1+1/(p_k-1)$. Then
+\[
+\frac1{\varphi(n)}=\frac{n}{\varphi(n)}-a
+=\frac{m}{\varphi(m)}\cdot\frac{r}{\varphi(r)}-a
+\ge a\Bigl(\frac{r}{\varphi(r)}-1\Bigr)\ge\frac{2}{p_k-1},
+\]
+so $2\varphi(n)\le p_k-1$. But $\varphi(n)=(p_k-1)\varphi(n/p_k)\ge
+p_k-1$, a contradiction. Hence $m<a\varphi(m)$, and since both are
+integers, $a\varphi(m)\ge m+1$. Therefore
+\[
+\frac{r}{\varphi(r)}=\frac{n/\varphi(n)}{m/\varphi(m)}>\frac{a\varphi(m)}
+{m}\ge 1+\frac1m. \qedhere
+\]
+\end{proof}
+
+\begin{proposition}\label{prop:upper}
+With the notation of Lemma~\ref{lem:prefix}, $p_i\le(k-i+1)(m+1)$. In
+particular $p_1\le2k$, and $n<(2k)^{2^{k}}/k$.
+\end{proposition}
+
+\begin{proof}
+Let $s=k-i+1$, the number of primes dividing $r$, each at least $p_i$.
+By Lemma~\ref{lem:prefix} and the inequalities $1+x\le e^{x}$ and
+$\log(1+1/m)\ge1/(m+1)$,
+\[
+\exp\Bigl(\frac{1}{m+1}\Bigr)\le1+\frac1m<\frac{r}{\varphi(r)}\le
+\Bigl(1+\frac{1}{p_i-1}\Bigr)^{s}\le\exp\Bigl(\frac{s}{p_i-1}\Bigr).
+\]
+Hence $p_i-1<s(m+1)$, and as $p_i$ is an integer, $p_i\le s(m+1)$. For
+$i=1$ this reads $p_1\le2k$.
+
+Put $x_i=p_1\cdots p_i$, so $x_0=1$ and $x_k=n$. The bound just proved
+gives $x_i=x_{i-1}p_i\le k\,x_{i-1}(x_{i-1}+1)$, hence
+\[
+x_i+1\le k\,x_{i-1}(x_{i-1}+1)+1\le k\,(x_{i-1}+1)^{2}.
+\]
+With $y_i=k(x_i+1)$ this is $y_i\le y_{i-1}^{2}$, so $y_k\le
+y_0^{2^{k}}=(2k)^{2^{k}}$, that is $n=x_k<(2k)^{2^{k}}/k$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Part (i) is Lemma~\ref{lem:basic}; (ii) is Proposition~\ref{prop:k10};
+(iii) is Proposition~\ref{prop:223}; (iv) is Proposition~\ref{prop:three};
+(v) is Proposition~\ref{prop:upper}. Finiteness for each $k$ follows
+because $n$ is bounded in terms of $k$.
+\end{proof}
+
+\section{Where the analytic method stops}\label{sec:gap}
+
+We record exactly what the arguments above cannot do.
+
+\begin{proposition}\label{prop:limit}
+The set $S=\{5,7,13,17,19,23,37,59,67,73,83\}$ is admissible and
+\[
+\Pi(S)=\frac{2995513256722805}{1484664878923776}>2 .
+\]
+Consequently the conditions used in Section~3 (admissibility and
+inequality \eqref{eq:prod} with $a=2$) do not exclude $k=11$.
+\end{proposition}
+
+\begin{proof}
+Admissibility: the numbers $p-1$ for $p\in S$ are $4,6,12,16,18,22,36,58,
+66,72,82$, whose odd prime factors are among $3,11,29,41$, none of which
+lies in $S$, and $2\notin S$. For the product, $2\cdot1484664878923776=
+2969329757847552<2995513256722805$.
+\end{proof}
+
+Proposition~\ref{prop:limit} does not produce a Lehmer number: the
+product $n'=\prod_{p\in S}p$ need not satisfy $\varphi(n')\mid n'-1$,
+and in fact the method never uses the divisibility \eqref{eq:L} beyond
+the two consequences $\gcd(n,\varphi(n))=1$ and $n/\varphi(n)>2$ (plus
+congruences modulo $3$). Any proof of Lehmer's conjecture must use
+\eqref{eq:L} in an essentially stronger way. Concretely, the gaps are:
+
+\begin{enumerate}
+\item[(G1)] \emph{No evident stopping point.} Proposition~\ref{prop:limit}
+shows that admissibility and \eqref{eq:prod} are compatible with $k=11$.
+We see no reason why they should become incompatible for larger $k$,
+but we do not prove that they remain compatible for every $k$; we
+record this only to explain why the method, as it stands, cannot
+terminate in a proof of the conjecture.
+\item[(G2)] \emph{Upper and lower bounds do not meet.} Theorem
+\ref{thm:main}(v) bounds $n$ doubly exponentially in $k$, while the
+lower bounds are bounds on $k$ alone. Combining them yields only that
+$n$ lies in a finite set for each $k$, not that the set is empty.
+\item[(G3)] \emph{Finite but unchecked ranges.} For each fixed $k\ge10$
+(with $3\nmid n$) the problem reduces, by (v), to a finite search. That
+search is computational and lies outside the scope of this paper, which
+admits no computer-assisted step.
+\end{enumerate}
+
+\noindent Lehmer's totient problem therefore remains open, and this paper
+claims no more than Theorem~\ref{thm:main}.
+
+\begin{thebibliography}{9}
+
+\bibitem{BZ19} D.~Burek and B.~\.{Z}mija, \emph{A new upper bound for
+numbers with the Lehmer property and its application to repunit
+numbers}, Int.\ J.\ Number Theory \textbf{15} (2019).
+
+\bibitem{CH80} G.~L.~Cohen and P.~Hagis, Jr., \emph{On the number of
+prime factors of $n$ if $\varphi(n)\mid n-1$}, Nieuw Arch.\ Wisk.\ (3)
+\textbf{28} (1980), 177--185.
+
+\bibitem{Hag88} P.~Hagis, Jr., \emph{On the equation $M\varphi(n)=n-1$},
+Nieuw Arch.\ Wisk.\ (4) \textbf{6} (1988), 255--261.
+
+\bibitem{Leh32} D.~H.~Lehmer, \emph{On Euler's totient function}, Bull.\
+Amer.\ Math.\ Soc.\ \textbf{38} (1932), 745--751.
+
+\bibitem{MBB} P.~Mandal, D.~Bhattacharjee and U.~Bhattacharya,
+\emph{Lehmer's totient problem with fewer than sixteen prime factors},
+preprint; code and data at \url{https://github.com/creelie/Lehmer-1-2}.
+
+\bibitem{Pom77} C.~Pomerance, \emph{On composite $n$ for which
+$\varphi(n)\mid n-1$, II}, Pacific J.\ Math.\ \textbf{69} (1977),
+177--186.
+
+\end{thebibliography}
+
+\end{document}
