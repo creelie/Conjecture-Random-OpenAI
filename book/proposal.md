@@ -37,13 +37,13 @@ The prerequisites are at the level of Griffiths–Harris, or the two volumes of 
 3. **Degree two.** A complete proof of the Lefschetz (1,1) theorem, and the reason each step fails in higher codimension.
 4. **Abelian varieties.** Cohomology as an exterior algebra, endomorphisms and the Rosati involution, the Hodge group and the Lefschetz group, and Lefschetz classes as invariants.
 5. **Weil type.** Weil's construction, the Hodge ring of the general member, the reduction to one class, and Voisin's non-algebraic tori.
-6. **Known cases.** Schoen, van Geemen, Markman, complex multiplication, and the recent preprints, kept apart from refereed results.
+6. **Known cases.** Members where divisors suffice, the density of the algebraic locus, Schoen's product argument and Prym varieties, Koike, Markman's secant sheaves, and the recent preprints, kept apart from refereed results.
 7. **The remaining case.** The algebraic locus, big monodromy, semiregularity, the variational problem, the bounded-degree criterion, the barrier theorems, and an exact statement of what is missing.
 
 Bibliography and index.
 
 ### Length and status
-The planned length is 250 to 300 pages. Chapters 1 to 3 are drafted and can be sent as sample chapters. The research content of Chapter 7 exists as a separate article. Give a realistic date for a complete manuscript, one you are sure you can meet.
+All seven chapters exist in a complete first draft of about 70 printed pages, with a full bibliography. At that length the book fits *SpringerBriefs in Mathematics*. For a longer monograph, the natural places to expand are full proofs of the results now cited from the literature (Lefschetz's theorem on very ample bundles, André's monodromy theorem, the semiregularity theorem), worked examples in Chapters 4 and 5, and exercises. Give a realistic date for the expanded manuscript, one you are sure you can meet.
 
 ### Competing and related books
 - C. Voisin, *Hodge Theory and Complex Algebraic Geometry I and II*. These are the standard texts. They cover the general theory, but not Weil classes in this depth.
@@ -70,7 +70,7 @@ Springer Nature requires this kind of disclosure, and an AI cannot be listed as 
    - *SpringerBriefs in Mathematics*: short books of about 50 to 125 pages. This fits if you want to publish Chapter 7 with a shortened background first.
    - A standalone monograph, outside any series.
 2. **Find the right editor.** On springer.com, open "Publish a book" or "Book authors", then the contact list for mathematics editors. Each series page also names its editors. Write to one editor only. Don't send the proposal to several at once.
-3. **Send the proposal, not the whole book.** Use the email below, with Part 1 attached as a PDF, Chapters 1 to 3 as a PDF, and a one-page CV. A first-time author is judged mostly on the sample chapters, so they must be clean, compiled and correct.
+3. **Send the proposal, not the whole book.** Use the email below, with Part 1 attached as a PDF, two or three sample chapters as a PDF (Chapters 5 and 7 show the book best), and a one-page CV. A first-time author is judged mostly on the sample chapters, so they must be clean, compiled and correct.
 4. **Use Springer's LaTeX class.** Download the monograph template, `svmono`, from Springer's LaTeX author page. The notes at the top of `book/main.tex` say what to change.
 5. **Expect peer review.** The editor sends the proposal to referees who are experts in Hodge theory. Their main question is whether the mathematics is correct and honestly described. A title or abstract that claims more than the book proves is the quickest way to be rejected.
 6. **The contract.** If the referees are positive, Springer offers a contract with a delivery date. Traditional publication is normally free for the author. Open access books carry a fee. Confirm both points with the editor.
@@ -84,7 +84,7 @@ Springer Nature requires this kind of disclosure, and an AI cannot be listed as 
 >
 > The book gives a self-contained account of the Hodge conjecture for abelian varieties of Weil type. On a general such variety the conjecture reduces to the algebraicity of one class. The book proves this reduction, surveys the cases where the class is known to be algebraic, and studies the variational problem that remains. It gives a criterion in terms of degrees, and barrier theorems showing which constructions cannot reach the class. It does not claim a proof of the conjecture.
 >
-> I attach a proposal with a table of contents, three sample chapters, and a short CV. I would be grateful for your opinion on whether the project suits the series.
+> I attach a proposal with a table of contents, sample chapters, and a short CV. I would be grateful for your opinion on whether the project suits the series.
 >
 > With best regards,
 > Deep Bhattacharjee

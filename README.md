@@ -50,6 +50,7 @@ gives and states exactly where it stops:
   isolates.
 
 `book/` is the draft of a monograph, *Weil Classes and the Hodge
-Conjecture*. Chapters 1–3 are written, and Chapters 4–7 and the bibliography
-are still to come. `book/proposal.md` is a draft Springer proposal, with
+Conjecture*. All seven chapters and the bibliography are in a first draft
+(about 70 printed pages). It has not been compiled here, because this
+environment has no LaTeX. `book/proposal.md` is a draft Springer proposal, with
 notes on how to submit it.
