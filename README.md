@@ -38,10 +38,16 @@ gives and states exactly where it stops:
 - strata through a member with full Hodge group have full monodromy;
 - one semiregular cycle would close the locus;
 - the locus is everything if and only if the Weil class has representatives
-  of bounded degree on a Zariski-dense set;
+  of bounded degree on a Zariski-dense set (a variant of H8's bounded
+  criterion);
 - at a member with full Hodge group, nothing built from divisors and
-  homomorphisms reaches the Weil class, and neither do the tautological
-  cycles of curves with an automorphism of order three.
+  homomorphisms reaches the Weil class (H8's Lefschetz-closure argument,
+  carried over to Weil classes), and neither do the tautological cycles of
+  curves with an automorphism of order three (new);
+- Schoen's cycles on Prym varieties do reach the Weil class at members with
+  full Hodge group for Q(sqrt(-3)), but only on a locus of dimension 3n.
+  Whether one of them is semiregular is the concrete open question the note
+  isolates.
 
 `book/` is the draft of a monograph, *Weil Classes and the Hodge
 Conjecture*. Chapters 1–3 are written, and Chapters 4–7 and the bibliography

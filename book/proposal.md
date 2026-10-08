@@ -14,16 +14,16 @@ This file has two parts. The first is the proposal itself, written so it can be 
 ### Summary
 The Hodge conjecture asks whether every rational cohomology class of type (p,p) on a smooth complex projective variety is a rational combination of classes of subvarieties. It is proved in degree two, open in general, and for abelian varieties it is known in a large number of cases. This book follows the conjecture into the place where abelian varieties stop cooperating, the abelian varieties of Weil type.
 
-On a general abelian variety of Weil type, the whole Hodge conjecture comes down to the algebraicity of a single class, the Weil class. The book proves this reduction and the classical results that surround it, gives complete proofs wherever the argument fits in a few pages, and states the deeper theorems precisely with references. It then studies the set of members of a Weil family on which the Weil class is algebraic. That set is dense, and it is either the whole family or a meagre set. The book shows that deciding between the two is exactly the variational Hodge conjecture for one class. It proves that the question is equivalent to a uniform bound on the degrees of representing cycles. It also proves that, at a member with the largest possible Hodge group, no cycle or sheaf built from divisors and homomorphisms can represent the class, and that the same holds for the tautological cycles of curves with an automorphism of order three.
+On a general abelian variety of Weil type, the whole Hodge conjecture comes down to the algebraicity of a single class, the Weil class. The book proves this reduction and the classical results that surround it, gives complete proofs wherever the argument fits in a few pages, and states the deeper theorems precisely with references. It then studies the set of members of a Weil family on which the Weil class is algebraic. That set is dense, and it is either the whole family or a meagre set. The book shows that deciding between the two is exactly the variational Hodge conjecture for one class. It shows that the question is equivalent to a uniform bound on the degrees of representing cycles. It proves that, at a member with the largest possible Hodge group, no cycle or sheaf built from divisors and homomorphisms can represent the class, and that the same holds for the tautological cycles of curves with an automorphism of order three. It then explains why Schoen's cycles on Prym varieties escape these barriers, and what would be needed to spread them over the whole family.
 
 The book does not prove the Hodge conjecture. It says so plainly, and it marks exactly where the known methods stop.
 
-### What is new
+### What the book adds
 - A self-contained account of the reduction, for a general abelian variety of Weil type, of the Hodge conjecture to one class.
-- The bounded-degree criterion for the algebraic locus of the Weil class.
-- The barrier theorem: at a member with full Hodge group, no class built from divisors by cup products, pullbacks and pushforwards along homomorphisms has a Weil component, and the same holds for Chern characters of sheaves built from line bundles. This includes Fourier–Mukai transforms with the Mumford bundle and semi-homogeneous bundles.
-- The corresponding statement for curves with an automorphism of order three, covering Jacobians of cyclic triple covers of the line and Prym varieties of étale triple covers.
-- An explanation of why every known successful construction starts on a special member and reaches the general one by deformation.
+- A treatment of the algebraic locus of the Weil class. It includes the bounded-degree criterion, in a variant of the author's earlier form.
+- The barrier theorem: at a member with full Hodge group, no class built from divisors by cup products, pullbacks and pushforwards along homomorphisms has a Weil component. The same holds for Chern characters of sheaves built from line bundles, including Fourier–Mukai transforms with the Mumford bundle and semi-homogeneous bundles. The argument is the author's earlier one for Mumford's exceptional classes, carried over to Weil classes.
+- A new result for curves with an automorphism of order three: their tautological cycles never reach a Weil class. So Schoen's cycles on Prym varieties, which do reach it, must come from somewhere else.
+- A precise open question: whether one of Schoen's cycles is semiregular. A positive answer for one dimension 2n would settle the Weil classes on the whole family of that dimension, for Q(√−3) with a split form.
 
 ### Audience
 - Graduate students who have taken a first course in algebraic geometry and complex manifolds.
@@ -82,7 +82,7 @@ Springer Nature requires this kind of disclosure, and an AI cannot be listed as 
 >
 > I would like to propose a book for [series name], with the working title *Weil Classes and the Hodge Conjecture: Abelian Varieties, Algebraic Cycles and the Variational Problem*.
 >
-> The book gives a self-contained account of the Hodge conjecture for abelian varieties of Weil type. On a general such variety the conjecture reduces to the algebraicity of one class. The book proves this reduction, surveys the cases where the class is known to be algebraic, and proves new results on the variational problem that remains. These are a criterion in terms of degrees, and barrier theorems showing which constructions cannot reach the class. It does not claim a proof of the conjecture.
+> The book gives a self-contained account of the Hodge conjecture for abelian varieties of Weil type. On a general such variety the conjecture reduces to the algebraicity of one class. The book proves this reduction, surveys the cases where the class is known to be algebraic, and studies the variational problem that remains. It gives a criterion in terms of degrees, and barrier theorems showing which constructions cannot reach the class. It does not claim a proof of the conjecture.
 >
 > I attach a proposal with a table of contents, three sample chapters, and a short CV. I would be grateful for your opinion on whether the project suits the series.
 >

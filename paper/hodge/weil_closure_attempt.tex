@@ -42,13 +42,17 @@ algebraic and move the cycle to every other member. We prove what that
 route gives. A stratum of the algebraic locus that passes through a member
 with the largest possible Hodge group has the largest possible monodromy.
 A single semiregular cycle at any one member would close the locus. We then
-show where the route stops. The only members at which the class is known to
-be algebraic have small Hodge group, and no semiregular cycle with the
-right class is known. The attempt does \emph{not} prove the Hodge
+show where the route stops. For most fields and discriminants the only
+members at which the class is known to be algebraic have small Hodge
+group. For $\QQ(\sqrt{-3})$ and a split form, Schoen's cycles on Prym
+varieties reach members with full Hodge group, but only along a locus of
+dimension $3n$, which is smaller than the family once $n\ge4$. No
+semiregular cycle with the right class is known. The attempt does \emph{not} prove the Hodge
 conjecture for these varieties, and we say precisely what is missing.
 We then treat the problem as an instance of the variational Hodge
 conjecture and prove three further results that narrow where a proof can
-come from: the locus is everything exactly when the class has
+come from. The first two are variants of arguments in the author's
+earlier work, and the third is new: the locus is everything exactly when the class has
 representatives of bounded degree on a Zariski-dense set; at a member with
 full Hodge group no class or Chern character built from divisors and
 homomorphisms can reach the Weil class; and the same holds for the
@@ -98,9 +102,14 @@ coefficients on $A_{t}$.
 
 The goal is $\Sigma=\Sh$. That statement, for every $K$, $n$ and
 discriminant, is the Hodge conjecture for every abelian variety of Weil
-type. For $n=2$ it is a theorem of Markman \cite{Mar25a,Mar25b}. For
-$n=3$ and a split hermitian form it is also Markman's theorem. For $n\ge3$
-in general it is open.
+type. For $n=2$ it is a theorem of Markman \cite{Mar25a,Mar25b}, after
+earlier cases due to Schoen \cite{Sch88,Sch98}. For $n=3$
+and a split hermitian form it is also Markman's theorem, and Schoen and
+Koike treated particular families of sixfolds for $\QQ(\sqrt{-3})$ and
+$\QQ(\sqrt{-1})$ \cite{Sch88,Koi04}. Unrefereed preprints released in
+September 2026 announce the split eightfolds, and with a product argument
+of Schoen that would give every sixfold \cite{BhH8}. We use none of them.
+For $n\ge4$, and for $n=3$ in general, the question is open.
 
 \section{What is already known about the locus}
 
@@ -157,8 +166,14 @@ $\SU(V,H)$. Its complement is a countable union of proper special
 subvarieties, so $\Sh^{\circ}$ is the complement of a meagre set. Every
 point in the Hecke orbit of $s_{0}$ is a CM point, with a torus for its
 Hodge group, so it lies \emph{outside} $\Sh^{\circ}$. To close the locus
-we need at least one point of $\Sigma\cap\Sh^{\circ}$, and no such point
-is known for $n\ge3$ in general.
+we need at least one point of $\Sigma\cap\Sh^{\circ}$. For
+$K=\QQ(\sqrt{-3})$ and a split form such points are known. The Prym
+varieties of \'etale cyclic triple covers of curves of genus $n+1$ are of
+Weil type, Schoen proved that their Weil classes are algebraic
+\cite{Sch88}, and a very general one has full Hodge group, by Looijenga's
+computation of the monodromy \cite{Loo97} and Andr\'e's theorem. (This
+account follows \cite{BhH8}.) For other fields and discriminants no such
+point is known when $n\ge3$.
 
 \section{The first route: strata with big monodromy}
 
@@ -265,11 +280,14 @@ of semiregularity \cite{Mar25b}.
 Both routes need an input that we do not have.
 
 \subsection*{The first route needs a point of $\Sigma$ with full Hodge group.}
-Outside the families where the conjecture is already known, such as
-Markman's split sixfolds, every point at which $\omega$ is known to be
-algebraic is a CM point or lies on a proper special subvariety. These points are excluded from $\Sh^{\circ}$ by definition.
+Outside the families where the conjecture is already known and Schoen's
+Prym locus for $\QQ(\sqrt{-3})$, every point at which $\omega$ is known to
+be algebraic is a CM point or lies on a proper special subvariety. These
+points are excluded from $\Sh^{\circ}$ by definition.
 Theorem~\ref{thm:monodromy} tells us what a stratum through a point of
-$\Sh^{\circ}$ would look like, but it gives no way to find one.
+$\Sh^{\circ}$ looks like, but it gives no way to find one. Where one is
+known, Schoen's Prym locus, it has dimension $3n$, while $\Sh$ has
+dimension $n^{2}$. Nothing in the first route makes such a stratum grow.
 
 \subsection*{The second route needs a semiregular object, and the obvious
 ones are not.}
@@ -337,10 +355,17 @@ the standard conjectures as in Section~\ref{sec:stops}, reached from the
 other side.
 \end{enumerate}
 
-The rest of this section contains three new results. The first changes the
-question into a question about degrees. The second and third show that
-the natural ways of building cycles cannot reach $\omega$ at a member with
-full Hodge group, and so they say where any proof has to look.
+The rest of this section contains three results. The first changes the
+question into a question about degrees. It is a variant, with Chow
+varieties and arbitrary Zariski-dense sets, of the bounded criterion of
+\cite{BhH8} (its theorems \texttt{thm:degreebound}, \texttt{thm:p1equivalent}
+and \texttt{thm:escape}), which is stated for Hilbert data along Hecke
+orbits. The second shows that nothing built from divisors reaches
+$\omega$ at a member with full Hodge group. Its proof is the argument that
+\cite{BhH8} gives for Mumford's exceptional classes (its theorem
+\texttt{thm:lefschetzclosure}), carried over to the Weil family. The third
+is the analogue for the tautological cycles of curves with an automorphism
+of order three, and as far as I know it is new.
 
 \subsection{A criterion in terms of degrees}
 
@@ -386,7 +411,8 @@ trivially. (iii) implies (i): a Zariski-closed set that contains a
 Zariski-dense set is everything.
 \end{proof}
 
-The proposition is elementary, but it changes the shape of the question.
+The proposition is elementary, but it changes the shape of the question,
+as \cite{BhH8} already observed in its own setting.
 Proposition~\ref{prop:dense} already gives algebraic representatives of
 $\omega$ on a dense set. What is missing is a \emph{uniform bound} on their
 degrees and denominators along some Zariski-dense subset. Transport along
@@ -591,14 +617,19 @@ for $n\ge2$, so their Jacobians fill only a proper subvariety of $\Sh$. In
 the second, $C\to C'$ is an \'etale cyclic triple cover of a curve of genus
 $n+1$. Then $C$ has genus $3n+1$, the two nontrivial eigenspaces both have
 dimension $n$, and $P$ is the Prym variety, of dimension $2n$. These
-depend on $3n$ parameters. For $n=3$ that is nine, the dimension of $\Sh$,
-so for abelian sixfolds of Weil type for $\QQ(\sqrt{-3})$ with the matching
-polarisation type, counting dimensions does not rule out that the general
-member is such a Prym. I do not know whether it is. The proposition shows
-that the answer would not help by itself: even on a Prym, the cycles that
-come from the curve through diagonals, graphs of $\rho$ and the group law
-have $U$-invariant classes. To reach $\omega$ one needs a cycle on a power of
-$C$ whose class lies outside $R^{*}(C^{m})$.
+depend on $3n$ parameters, and for $n\le3$ that is at least $n^{2}$. Here
+much more is known than the proposition might suggest. Schoen proved that
+the Weil classes of these Prym varieties are algebraic \cite{Sch88}, so for
+$n\le3$ the Pryms give whole families of Weil type in which the conjecture
+holds, and for $n\ge4$ they give a locus of dimension $3n$ inside $\Sh$ on
+which $\omega$ is algebraic and whose very general point has full Hodge
+group. The proposition says something about how this can happen. Schoen's
+cycles represent a nonzero Weil class, so they cannot be the image of a
+tautological class under a map of the form in the proposition. Whatever
+they are built from, it is a cycle on a power of $C$, or a map, outside the
+tautological world. That is exactly the kind of source that
+Theorem~\ref{thm:barrier} says a proof needs, and it is the most concrete
+lead this note can offer (see the next subsection).
 
 \subsection{What the new results leave}
 
@@ -615,8 +646,16 @@ therefore has to supply one of three things: a uniform bound on degrees
 along a Zariski-dense set of special members; a deformation argument that
 carries a cycle from a special member to the general one, which is the
 semiregularity route of Theorem~\ref{thm:semireg}; or a source of cycles at
-a general member that is neither divisorial nor tautological. None of the
-three is available for $n\ge3$ in general.
+a general member that is neither divisorial nor tautological. The third
+exists for $\QQ(\sqrt{-3})$: Schoen's cycles on Prym varieties. Their
+locus has dimension $3n$, so for $n\ge4$ they reach only a thin part of
+$\Sh$. The obvious question is whether one of Schoen's cycles is
+semiregular. Its class is a Weil class plus a multiple of $\eta^{n}$, which is
+exactly the shape that Theorem~\ref{thm:semireg} allows and that the
+obstruction from Weil tori does not exclude. If one of them were
+semiregular, Theorem~\ref{thm:semireg} would give $\Sigma=\Sh$ for the
+family of that dimension. I have not been able to decide this. Outside
+$\QQ(\sqrt{-3})$, none of the three is available for $n\ge3$ in general.
 
 \section{What this note establishes}
 
@@ -642,10 +681,13 @@ nonzero Weil component.
 from diagonals, graphs of the automorphism and the group law push forward
 to classes with no Weil component.
 \end{enumerate}
-Not proved: that such a cycle or complex exists, or that $\Sigma$ contains
-a single member with full Hodge group, when $n\ge3$. So the Hodge
-conjecture for abelian varieties of Weil type of dimension at least six
-remains open, and with it the Hodge conjecture.
+Not proved: that such a cycle or complex exists when $n\ge3$, outside the
+families where the conjecture is already known; that Schoen's cycles on
+Prym varieties are semiregular; or, for fields other than
+$\QQ(\sqrt{-3})$ with a split form, that $\Sigma$ contains a single
+member with full Hodge group. So the Hodge conjecture for abelian varieties
+of Weil type remains open in dimension eight and above, and in dimension
+six outside the known families. The Hodge conjecture itself remains open.
 
 \begin{thebibliography}{99}
 
@@ -674,9 +716,15 @@ for modules and applications to deformations}, Compositio Math.\
 \bibitem{Del71} P.~Deligne, \emph{Th\'eorie de Hodge~II}, Publ.\ Math.\
 IH\'ES \textbf{40} (1971), 5--57.
 
+\bibitem{Koi04} K.~Koike, \emph{Algebraicity of some Weil Hodge classes},
+Canad.\ Math.\ Bull.\ \textbf{47} (2004), 566--572.
+
 \bibitem{Kol96} J.~Koll\'ar, \emph{Rational Curves on Algebraic
 Varieties}, Ergebnisse der Mathematik und ihrer Grenzgebiete (3)
 \textbf{32}, Springer, Berlin, 1996.
+
+\bibitem{Loo97} E.~Looijenga, \emph{Prym representations of mapping class
+groups}, Geom.\ Dedicata \textbf{64} (1997), 69--83.
 
 \bibitem{Mar25a} E.~Markman, \emph{Cycles on abelian $2n$-folds of Weil
 type from secant sheaves on abelian $n$-folds}, preprint,
@@ -693,6 +741,13 @@ varieties of low dimension}, Math.\ Ann.\ \textbf{315} (1999), 711--733.
 
 \bibitem{Pri24} J.~P.~Pridham, \emph{Semiregularity as a consequence of
 Goodwillie's theorem}, Forum Math.\ Sigma \textbf{12} (2024), e126.
+
+\bibitem{Sch88} C.~Schoen, \emph{Hodge classes on self-products of a variety
+with an automorphism}, Compositio Math.\ \textbf{65} (1988), 3--32.
+
+\bibitem{Sch98} C.~Schoen, \emph{Addendum to: Hodge classes on
+self-products of a variety with an automorphism}, Compositio Math.\
+\textbf{114} (1998), 329--336.
 
 \bibitem{Voi02b} C.~Voisin, \emph{A counterexample to the Hodge conjecture
 extended to K\"ahler varieties}, Int.\ Math.\ Res.\ Not.\ \textbf{2002},
